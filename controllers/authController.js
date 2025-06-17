@@ -3,10 +3,15 @@ import {
   registerUser,
   findUserByEmail,
   verifyPassword,
-} from ("../services/userServices");
+} from "../services/userServices.js";
 
 export const registerHandler = async (fastify, request, reply) => {
-  const { email, password } = reply.body;
+  const { email, password } = request.body;
+  console.log("BODY:", request.body, email);
+
+  if (!email || !password) {
+    return reply.code(400).send({ error: "Email and password are required" });
+  }
   try {
     const user = registerUser(fastify.prisma, email, password);
     const token = fastify.jwt.sign({ userId: user.id });
@@ -18,7 +23,7 @@ export const registerHandler = async (fastify, request, reply) => {
 };
 
 export const loginHandler = async (fastify, request, reply) => {
-  const { email, password } = reply.body;
+  const { email, password } = request.body;
   try {
     const user = findUserByEmail(fastify.prisma, email);
     const passwordcheck = verifyPassword(password, user.password);

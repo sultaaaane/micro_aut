@@ -2,10 +2,11 @@
   "name": "micro_aut",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "node server",
+    "dev": "nodemon server"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "dotenv": "^16.5.0",
     "fastify": "^5.4.0",
     "fastify-plugin": "^5.0.1",
+    "nodemon": "^3.1.10",
     "prisma": "^6.9.0"
   }
 }

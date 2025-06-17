@@ -1,4 +1,4 @@
-import { registerHandler, loginHandler } from "../controllers/authController";
+import { registerHandler, loginHandler } from "../controllers/authController.js";
 
 export async function authRoutes(fastify, options) {
   fastify.post("/auth/register", async (request, reply) => {

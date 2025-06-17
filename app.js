@@ -6,11 +6,11 @@ import jwt from '@fastify/jwt';
 import dotenv from 'dotenv';
 
 import prismaPlugin from './plugins/prisma.js';
-import authRoutes from './routes/auth.js';
+import {authRoutes} from './routes/auth.js';
 
 // Needed for __dirname in ESM
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __dirname is not used, so it is removed
 
 // Load environment variables
 dotenv.config();
@@ -38,7 +38,6 @@ fastify.decorate('authenticate', async function (request, reply) {
 
 // 4. Register routes
 await fastify.register(authRoutes);
-await fastify.register(userRoutes);
 
 // 5. Start server
 const start = async () => {

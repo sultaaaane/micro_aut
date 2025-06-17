@@ -1,0 +1,9 @@
+{"level":30,"time":1750191324719,"pid":9169,"hostname":"sultane","msg":"Server listening at http://127.0.0.1:3000"}
+🚀 Server ready at http://localhost:3000
+{"level":30,"time":1750191324719,"pid":9169,"hostname":"sultane","msg":"Server listening at http://10.0.2.15:3000"}
+{"level":30,"time":1750191327358,"pid":9169,"hostname":"sultane","reqId":"req-1","req":{"method":"POST","url":"/auth/register","host":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":59836},"msg":"incoming request"}
+BODY: { email: 'test@example.com', password: 'securepass' } test@example.com
+EMAIL: test@example.com
+{"level":30,"time":1750191327367,"pid":9169,"hostname":"sultane","reqId":"req-1","res":{"statusCode":201},"responseTime":7.908416000194848,"msg":"request completed"}
+{"level":30,"time":1750191393469,"pid":9169,"hostname":"sultane","reqId":"req-2","req":{"method":"POST","url":"/auth/login","host":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":37226},"msg":"incoming request"}
+{"level":30,"time":1750191393472,"pid":9169,"hostname":"sultane","reqId":"req-2","res":{"statusCode":201},"responseTime":2.7491499995812774,"msg":"request completed"}
