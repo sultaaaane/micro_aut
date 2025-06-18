@@ -25,7 +25,8 @@ export const registerHandler = async (fastify, request, reply) => {
 export const loginHandler = async (fastify, request, reply) => {
   const { email, password } = request.body;
   try {
-    const user = findUserByEmail(fastify.prisma, email);
+    const user = await findUserByEmail(fastify.prisma, email);
+    console.log("PASSWORD:",password,email,user)
     const passwordcheck = verifyPassword(password, user.password);
 
     if (!passwordcheck) return reply.code(400).send("No match to the password");

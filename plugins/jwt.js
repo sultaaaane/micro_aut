@@ -20,4 +20,4 @@ fastify.decorate("authenticate", async (request, reply) => {
 })
 };
 
-module.exports = fp(jwtPlugin);
+export default fastifyPlugin(jwtPlugin);
